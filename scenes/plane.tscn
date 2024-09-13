@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://citegsbrmu4pu"]
+[gd_scene load_steps=7 format=3 uid="uid://citegsbrmu4pu"]
 
 [ext_resource type="Texture2D" uid="uid://xyu6xgfeyco5" path="res://assets/plane/planes_sheet.png" id="1_sn1u6"]
 
@@ -31,6 +31,9 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_im5d8"]
+radius = 23.0
+
 [node name="Plane" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -40,3 +43,7 @@ animation = &"fly"
 autoplay = "fly"
 frame = 2
 frame_progress = 0.274165
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -0.0977153
+shape = SubResource("CircleShape2D_im5d8")
