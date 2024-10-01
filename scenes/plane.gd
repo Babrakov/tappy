@@ -22,10 +22,7 @@ func fly() -> void:
 	if Input.is_action_just_pressed("fly") == true:
 		velocity.y = POWER	
 		animation_player.play("power")
-		
-		
+
 func die() -> void:
 	set_physics_process(false)
 	animated_sprite_2d.stop()
-	
-	
