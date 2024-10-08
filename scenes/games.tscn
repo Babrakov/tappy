@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dq8avnspokhh0"]
+[gd_scene load_steps=6 format=3 uid="uid://dq8avnspokhh0"]
 
+[ext_resource type="Script" path="res://scenes/games.gd" id="1_85kwp"]
 [ext_resource type="Texture2D" uid="uid://e4g8etybuwq8" path="res://assets/background/rocks_2.png" id="1_eacpm"]
 [ext_resource type="PackedScene" uid="uid://citegsbrmu4pu" path="res://scenes/plane.tscn" id="2_3v7fa"]
 [ext_resource type="PackedScene" uid="uid://b7h3mn4rw65tw" path="res://scenes/barrier.tscn" id="3_l5ojf"]
 [ext_resource type="PackedScene" uid="uid://juogcfnlfite" path="res://scenes/pipes.tscn" id="4_cdj3r"]
 
 [node name="Games" type="Node2D"]
+script = ExtResource("1_85kwp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(347, 411)
@@ -22,3 +24,17 @@ position = Vector2(-4, 862)
 
 [node name="Pipes" parent="." instance=ExtResource("4_cdj3r")]
 position = Vector2(371, 399)
+
+[node name="SpawnU" type="Marker2D" parent="."]
+position = Vector2(530, 340)
+
+[node name="SpawnL" type="Marker2D" parent="."]
+position = Vector2(530, 540)
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 1.2
+autostart = true
+
+[node name="PipesHolder" type="Node" parent="."]
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
