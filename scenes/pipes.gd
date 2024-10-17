@@ -11,6 +11,7 @@ func _process(delta: float) -> void:
 	
 func check_off_screen() -> void:
 	if position.x < OFF_SCREEN:
+		print("offscreen")
 		queue_free()
 
 func _on_screen_exited() -> void:
