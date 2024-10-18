@@ -4,6 +4,9 @@ class_name Pipes
 
 const OFF_SCREEN: float = -500.0
 
+func _ready() -> void:
+	SignalManager.on_plane_died.connect(_on_plane_died)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position.x -= delta * GameManager.SCROLL_SPEED
@@ -16,3 +19,6 @@ func check_off_screen() -> void:
 
 func _on_screen_exited() -> void:
 	queue_free()
+
+func _on_plane_died() -> void:
+	set_process(false)
