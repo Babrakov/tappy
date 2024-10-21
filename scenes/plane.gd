@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Tappy
+
 const GRAVITY: float = 1000.0
 const POWER: float = -350.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
