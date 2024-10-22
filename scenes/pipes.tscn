@@ -22,9 +22,11 @@ position = Vector2(0, 80)
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(27, 0)
 
-[node name="Score" type="AudioStreamPlayer" parent="."]
+[node name="ScoreSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_21ni7")
+volume_db = -6.5
 
 [connection signal="body_entered" from="Upper" to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Lower" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Laser" to="." method="_on_laser_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]
