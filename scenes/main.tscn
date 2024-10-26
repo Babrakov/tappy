@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bijwl212p1efb"]
+[gd_scene load_steps=6 format=3 uid="uid://bijwl212p1efb"]
 
 [ext_resource type="Texture2D" uid="uid://dejscw7bq6dn5" path="res://assets/background/sky.png" id="1_rynkp"]
 [ext_resource type="FontFile" uid="uid://dxeh2p5sukqf3" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="2_45ihp"]
 [ext_resource type="LabelSettings" uid="uid://c0kunl2b33crd" path="res://assets/LG_red_24.tres" id="3_h3ie4"]
+[ext_resource type="LabelSettings" uid="uid://caowvlcyv3in1" path="res://assets/LG_red_48.tres" id="3_mbg6y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pgvea"]
 line_spacing = 1.0
@@ -57,6 +58,7 @@ layout_mode = 2
 text = "PRESS SPACE
 TO
 PLAY"
+label_settings = ExtResource("3_mbg6y")
 horizontal_alignment = 1
 
 [node name="HighscoreLabel" type="Label" parent="MarginContainer"]
@@ -71,5 +73,6 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-text = "1"
+text = "00000"
+label_settings = ExtResource("3_h3ie4")
 horizontal_alignment = 1
