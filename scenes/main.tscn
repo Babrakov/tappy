@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bijwl212p1efb"]
+[gd_scene load_steps=10 format=3 uid="uid://bijwl212p1efb"]
 
 [ext_resource type="Texture2D" uid="uid://dejscw7bq6dn5" path="res://assets/background/sky.png" id="1_rynkp"]
 [ext_resource type="FontFile" uid="uid://dxeh2p5sukqf3" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="2_45ihp"]
 [ext_resource type="LabelSettings" uid="uid://c0kunl2b33crd" path="res://assets/LG_red_24.tres" id="3_h3ie4"]
 [ext_resource type="LabelSettings" uid="uid://caowvlcyv3in1" path="res://assets/LG_red_48.tres" id="3_mbg6y"]
+[ext_resource type="AudioStream" uid="uid://drui5j63mxjag" path="res://assets/audio/bgm_menu.mp3" id="5_sn1sb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pgvea"]
 line_spacing = 1.0
@@ -14,6 +15,44 @@ outline_size = 4
 outline_color = Color(0.521813, 0.410114, 0.989179, 1)
 shadow_size = 7
 shadow_color = Color(0.113725, 0.113725, 0.113725, 0.847059)
+
+[sub_resource type="Animation" id="Animation_3umvy"]
+resource_name = "flash"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/StartLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lvrc0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/StartLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t1wt2"]
+_data = {
+"RESET": SubResource("Animation_lvrc0"),
+"flash": SubResource("Animation_3umvy")
+}
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -76,3 +115,14 @@ size_flags_vertical = 8
 text = "00000"
 label_settings = ExtResource("3_h3ie4")
 horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_t1wt2")
+}
+autoplay = "flash"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_sn1sb")
+volume_db = -22.0
+autoplay = true
