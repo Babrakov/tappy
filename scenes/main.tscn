@@ -1,21 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bijwl212p1efb"]
+[gd_scene load_steps=10 format=3 uid="uid://bijwl212p1efb"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_rm5qc"]
 [ext_resource type="Texture2D" uid="uid://dejscw7bq6dn5" path="res://assets/background/sky.png" id="1_rynkp"]
-[ext_resource type="FontFile" uid="uid://dxeh2p5sukqf3" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="2_45ihp"]
 [ext_resource type="LabelSettings" uid="uid://c0kunl2b33crd" path="res://assets/LG_red_24.tres" id="3_h3ie4"]
-[ext_resource type="LabelSettings" uid="uid://caowvlcyv3in1" path="res://assets/LG_red_48.tres" id="3_mbg6y"]
+[ext_resource type="LabelSettings" uid="uid://4crepujiuj5e" path="res://assets/LG_red_64.tres" id="3_ys0wj"]
+[ext_resource type="LabelSettings" uid="uid://cmic8ny8u2llu" path="res://assets/LG_white_48.tres" id="4_y2wmo"]
 [ext_resource type="AudioStream" uid="uid://drui5j63mxjag" path="res://assets/audio/bgm_menu.mp3" id="5_sn1sb"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_pgvea"]
-line_spacing = 1.0
-font = ExtResource("2_45ihp")
-font_size = 72
-font_color = Color(0.8, 0.188235, 0.313726, 1)
-outline_size = 4
-outline_color = Color(0.521813, 0.410114, 0.989179, 1)
-shadow_size = 7
-shadow_color = Color(0.113725, 0.113725, 0.113725, 0.847059)
 
 [sub_resource type="Animation" id="Animation_lvrc0"]
 length = 0.001
@@ -91,7 +81,7 @@ layout_mode = 2
 size_flags_vertical = 0
 text = "TAPPY
 PLANE"
-label_settings = SubResource("LabelSettings_pgvea")
+label_settings = ExtResource("3_ys0wj")
 horizontal_alignment = 1
 
 [node name="StartLabel" type="Label" parent="MarginContainer"]
@@ -99,7 +89,7 @@ layout_mode = 2
 text = "PRESS SPACE
 TO
 PLAY"
-label_settings = ExtResource("3_mbg6y")
+label_settings = ExtResource("4_y2wmo")
 horizontal_alignment = 1
 
 [node name="HighscoreLabel" type="Label" parent="MarginContainer"]
