@@ -19,6 +19,7 @@ func on_game_over() -> void:
 	show()
 	timer.start()
 	sound.play()
+	ScoreManager.save_high_score()
 	
 
 func _on_timer_timeout() -> void:
