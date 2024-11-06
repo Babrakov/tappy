@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://hivwqbqf1uet"]
+
+[ext_resource type="Script" path="res://scenes/parallax_2d.gd" id="1_1l7jp"]
+
+[node name="Parallax2D" type="Parallax2D"]
+z_index = -100
+follow_viewport = false
+ignore_camera_scroll = true
+script = ExtResource("1_1l7jp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
