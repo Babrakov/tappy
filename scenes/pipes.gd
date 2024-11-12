@@ -2,8 +2,9 @@ extends Node2D
 
 class_name Pipes 
 
-const OFF_SCREEN: float = -500.0
+#const OFF_SCREEN: float = -500.0
 @onready var score_sound: AudioStreamPlayer = $ScoreSound
+@onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
 
 func _ready() -> void:
 	SignalManager.on_plane_died.connect(_on_plane_died)
@@ -14,12 +15,12 @@ func _process(delta: float) -> void:
 	check_off_screen()
 	
 func check_off_screen() -> void:
-	if position.x < OFF_SCREEN:
-		print("offscreen")
+	if visible_on_screen_notifier_2d.position.x < get_viewport_rect().position.x:
+		# print("offscreen")
 		queue_free()
 
-func _on_screen_exited() -> void:
-	queue_free()
+#func _on_screen_exited() -> void:
+#	queue_free()
 
 func _on_plane_died() -> void:
 	set_process(false)
